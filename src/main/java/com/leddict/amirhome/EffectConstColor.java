@@ -7,9 +7,23 @@ public class EffectConstColor extends Effect<EffectConstColor.Configuration> {
         public Configuration() { }
 
         public Configuration(HSBColor colorToApply) {
-            this.colorToApply = colorToApply;
+            this(new HSBColor[]{colorToApply}, 1.0);
         }
-        public HSBColor colorToApply = HSBColor.WHITE;
+
+        public Configuration(HSBColor colorsToApply[]) {
+            this(colorsToApply, 1.0);
+        }
+
+        public Configuration(HSBColor colorsToApply[], double changeFreq) {
+            this.changeFreq = changeFreq;
+            this.colorToApply = new HSBColor[colorsToApply.length];
+            for(int i=0; i<colorsToApply.length; i++) {
+                this.colorToApply[i] = colorsToApply[i];
+            }
+        }
+
+        public HSBColor colorToApply[] = {HSBColor.WHITE};
+        double changeFreq = 1.0;
     }
 
     public EffectConstColor(HSBColor colorsArray[], Configuration config) {
@@ -21,9 +35,13 @@ public class EffectConstColor extends Effect<EffectConstColor.Configuration> {
     }
 
     @Override
-    public void apply(double timePercent) {
+    public void apply(double timePercent, Integer beatIndex) {
+        int currentBeat = beatIndex != null ? beatIndex : 1;
+        double currentTime = (double)currentBeat + timePercent;
+        int colorIndex =  (int)(currentTime / config.changeFreq) % config.colorToApply.length;
+        HSBColor currentColor = config.colorToApply[colorIndex];
         for(HSBColor c: colorsArray) {
-            c.copyFromOther(config.colorToApply);
+            c.copyFromOther(currentColor);
         }
     }
 

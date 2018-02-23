@@ -6,7 +6,7 @@ public abstract class Effect<ConfigClass extends EffectConfiguration> {
         this.colorsArray = colorsArray;
     }
 
-    public abstract void apply(double timePercent);
+    public abstract void apply(double timePercent, Integer beatIndex);
     public void setConfig(ConfigClass config) {
         this.config = config;
     }

@@ -28,6 +28,7 @@ public class HSBColor {
 
     static HSBColor WHITE = new HSBColor(0.0, 0.0, 1.0);
     static HSBColor BLACK = new HSBColor(0.0, 0.0, 0.0);
+    static HSBColor FULL_SAT = new HSBColor(0.0, 1.0, 1.0);
 
     static HSBColor RED = new HSBColor(0.0, 1.0, 1.0);
     static HSBColor GREEN = new HSBColor(1.0 / 3.0, 1.0, 1.0);

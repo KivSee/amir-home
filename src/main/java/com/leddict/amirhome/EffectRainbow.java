@@ -5,7 +5,7 @@ changes only the hue value to rainbow
  */
 public class EffectRainbow extends Effect<EffectRainbow.Configuration> {
 
-    public class Configuration extends EffectConfiguration {
+    public static class Configuration extends EffectConfiguration {
         public double hueStart = 0.0;
         public double hueEnd = 1.0;
     }
@@ -19,11 +19,10 @@ public class EffectRainbow extends Effect<EffectRainbow.Configuration> {
     }
 
     @Override
-    public void apply(double timePercent) {
+    public void apply(double timePercent, Integer beatIndex) {
         for(int i=0; i<colorsArray.length; i++) {
             double relativePos = ((double)i) / ((double)colorsArray.length); // [0.0, 1.0)
             colorsArray[i].hue = config.hueStart + relativePos * (config.hueEnd - config.hueStart);
-            colorsArray[i].saturation = 1.0;
         }
     }
 

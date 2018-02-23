@@ -12,7 +12,7 @@ public class EffectSegment extends Effect {
     }
 
     @Override
-    public void apply(double timePercent) {
+    public void apply(double timePercent, Integer beatIndex) {
 
     }
 

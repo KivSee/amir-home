@@ -30,7 +30,10 @@ public abstract class LedObject {
         return this.allPixelsArray.length;
     }
 
-    public abstract HSBColor[] GetActivePixels();
+    /*
+    override if you want
+     */
+    public HSBColor[] GetActivePixels() { return this.allPixelsArray; }
 
     /*
     allPixelsArray is generate by the abstract class.
