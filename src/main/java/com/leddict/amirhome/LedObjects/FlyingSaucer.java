@@ -1,4 +1,6 @@
-package com.leddict.amirhome;
+package com.leddict.amirhome.LedObjects;
+
+import com.leddict.amirhome.Colors.HSBColor;
 
 public class FlyingSaucer extends LedObject {
 

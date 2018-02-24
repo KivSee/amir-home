@@ -1,4 +1,6 @@
-package com.leddict.amirhome;
+package com.leddict.amirhome.Effects;
+
+import com.leddict.amirhome.Colors.HSBColor;
 
 public class EffectAlternateOnOff extends Effect<EffectAlternateOnOff.Configuration> {
 

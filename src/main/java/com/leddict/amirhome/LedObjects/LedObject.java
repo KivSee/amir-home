@@ -1,11 +1,13 @@
-package com.leddict.amirhome;
+package com.leddict.amirhome.LedObjects;
+
+import com.leddict.amirhome.Colors.HSBColor;
 
 /*
-The abstract com.leddict.amirhome.LedObject defines the methods which each com.leddict.amirhome.LedObject should support, and implements abstract behaviour.
-Each com.leddict.amirhome.LedObject (in this context) is a group of individual addressable pixels, which create the physical object itself.
-Abstract com.leddict.amirhome.LedObject holds an array of color per pixel, which can be accessed via the GetAllPixels() method.
+The abstract com.leddict.amirhome.LedObjects.LedObject defines the methods which each com.leddict.amirhome.LedObjects.LedObject should support, and implements abstract behaviour.
+Each com.leddict.amirhome.LedObjects.LedObject (in this context) is a group of individual addressable pixels, which create the physical object itself.
+Abstract com.leddict.amirhome.LedObjects.LedObject holds an array of color per pixel, which can be accessed via the GetAllPixels() method.
 
-com.leddict.amirhome.LedObject is an abstract class. If you want to use it you should extend it, and implement whatever logic you need
+com.leddict.amirhome.LedObjects.LedObject is an abstract class. If you want to use it you should extend it, and implement whatever logic you need
 for the specific object you are dealing with.
  */
 public abstract class LedObject {
@@ -37,7 +39,7 @@ public abstract class LedObject {
 
     /*
     allPixelsArray is generate by the abstract class.
-    There is only one copy for it for each com.leddict.amirhome.LedObject instance.
+    There is only one copy for it for each com.leddict.amirhome.LedObjects.LedObject instance.
     The array does not aware nor does it care about the different segments that create the full object.
     It does not aware of the RGB order of the actual
      */

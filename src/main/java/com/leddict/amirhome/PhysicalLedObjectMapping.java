@@ -2,6 +2,8 @@ package com.leddict.amirhome;
 
 import com.github.leddict.FSTColor;
 import com.github.leddict.Network;
+import com.leddict.amirhome.Colors.HSBColor;
+import com.leddict.amirhome.LedObjects.LedObject;
 
 import java.awt.*;
 import java.util.ArrayList;

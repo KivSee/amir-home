@@ -1,4 +1,6 @@
-package com.leddict.amirhome;
+package com.leddict.amirhome.Effects;
+
+import com.leddict.amirhome.Colors.HSBColor;
 
 /*
 changes only the hue value to rainbow

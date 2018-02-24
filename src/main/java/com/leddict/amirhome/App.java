@@ -1,6 +1,12 @@
 package com.leddict.amirhome;
 
 import com.github.leddict.Network;
+import com.leddict.amirhome.Audio.Position.PositionReceiver;
+import com.leddict.amirhome.Colors.HSBColor;
+import com.leddict.amirhome.Effects.Effect;
+import com.leddict.amirhome.Effects.EffectAlternateOnOff;
+import com.leddict.amirhome.Effects.EffectConstColor;
+import com.leddict.amirhome.LedObjects.FlyingSaucer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +42,8 @@ public class App
         physicalLedObjectMapping.globalBrightness = 0.5;
 
         List<Effect> effects = new ArrayList();
-        effects.add(new EffectConstColor(fs.allPixelsArray, new EffectConstColor.Configuration(HSBColor.FULL_SAT)));
-        effects.add(new EffectConstColor(fs.allPixelsArray, new EffectConstColor.Configuration(new HSBColor[] {HSBColor.YELLOW, HSBColor.RED})));
+        effects.add(new EffectConstColor(fs.GetAllPixels(), new EffectConstColor.Configuration(HSBColor.FULL_SAT)));
+        effects.add(new EffectConstColor(fs.GetAllPixels(), new EffectConstColor.Configuration(new HSBColor[] {HSBColor.YELLOW, HSBColor.RED})));
         effects.add(new EffectAlternateOnOff(fs.side, new EffectAlternateOnOff.Configuration(2.0)));
 //        effects[0] = new EffectConstColor(sign1234.digit1, new EffectConstColor.Configuration(HSBColor.RED));
 //        effects[1] = new EffectConstColor(sign1234.digit2, new EffectConstColor.Configuration(HSBColor.ORANGE));
@@ -48,7 +54,7 @@ public class App
 //        effects[6] = new EffectFadeOut(sign1234.digit3, new EffectFadeOut.Configuration());
 //        effects[7] = new EffectFadeOut(sign1234.digit4, new EffectFadeOut.Configuration());
 
-        Effect blackEffect = new EffectConstColor(fs.allPixelsArray, new EffectConstColor.Configuration(HSBColor.BLACK));
+        Effect blackEffect = new EffectConstColor(fs.GetAllPixels(), new EffectConstColor.Configuration(HSBColor.BLACK));
 
         PositionReceiver positionRecevier = new PositionReceiver();
         positionRecevier.start();
